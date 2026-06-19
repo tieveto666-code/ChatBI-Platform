@@ -1,5 +1,6 @@
-# ChatBI
+# ChatBI Platform
 
+[![CI](https://github.com/tieveto666-code/ChatBI-Platform/actions/workflows/ci.yml/badge.svg)](https://github.com/tieveto666-code/ChatBI-Platform/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](backend/requirements.txt)
 [![Node 18+](https://img.shields.io/badge/node-18+-green.svg)](frontend/package.json)
@@ -27,6 +28,9 @@
 ## 快速开始
 
 ```bash
+git clone https://github.com/tieveto666-code/ChatBI-Platform.git
+cd ChatBI-Platform
+
 # 1. 配置密钥
 cp .env.example backend/.env
 # 编辑 backend/.env，填入 DEEPSEEK_API_KEY
@@ -71,7 +75,7 @@ cd .. && chmod +x dev-start.sh && ./dev-start.sh
 ## 项目结构
 
 ```
-chatbi-open-source/
+ChatBI-Platform/
 ├── backend/           # FastAPI + SQLAlchemy
 │   ├── data/samples/  # 演示 SQLite 与样例 Excel
 │   ├── llm/           # DeepSeek Provider
@@ -86,13 +90,14 @@ chatbi-open-source/
 ## 测试
 
 ```bash
-cd backend
+# 后端（需安装开发依赖，使用 mock LLM，无需 API Key）
+cd backend && python3 -m pip install -r requirements-dev.txt
 python3 -m pytest -q
 ```
 
 ```bash
-cd frontend
-npm run build
+# 前端
+cd frontend && npm install && npm run build
 ```
 
 ## 文档
@@ -102,17 +107,6 @@ npm run build
 - [后端架构](docs/Architecture.md)
 - [贡献指南](CONTRIBUTING.md)
 - [安全说明](SECURITY.md)
-
-## 发布到 GitHub
-
-```bash
-cd chatbi-open-source
-git init
-git add .
-git commit -m "Initial open-source release"
-git remote add origin git@github.com:YOUR_USER/chatbi.git
-git push -u origin main
-```
 
 ## License
 

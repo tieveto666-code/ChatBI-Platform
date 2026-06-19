@@ -11,17 +11,20 @@
 ```bash
 cd backend && python3 -m pip install -r requirements.txt
 cd ../frontend && npm install
-cd .. && ./dev-start.sh
+cd .. && chmod +x dev-start.sh && ./dev-start.sh
 ```
 
 ## 提交前检查
 
+与 CI 保持一致，请运行：
+
 ```bash
-# 后端测试（使用 mock LLM，无需 API Key）
-cd backend && python3 -m pytest -q
+# 后端测试（requirements-dev.txt 含 pytest；mock LLM，无需 API Key）
+cd backend && python3 -m pip install -r requirements-dev.txt
+python3 -m pytest -q
 
 # 前端构建
-cd frontend && npm run build
+cd ../frontend && npm ci && npm run build
 ```
 
 ## Pull Request
