@@ -10,9 +10,10 @@ from __future__ import annotations
 import asyncio
 import os
 import sys
+import tempfile
 from typing import AsyncGenerator
 
-TEST_DB_PATH = "/private/tmp/chatbi_backend_tests.sqlite"
+TEST_DB_PATH = os.path.join(tempfile.gettempdir(), "chatbi_backend_tests.sqlite")
 os.environ["DATABASE_URL"] = f"sqlite:///{TEST_DB_PATH}"
 os.environ["JWT_SECRET"] = "test-secret-key-for-testing"
 os.environ["LLM_PROVIDER"] = "mock"
