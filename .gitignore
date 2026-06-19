@@ -1,0 +1,40 @@
+# 环境变量与密钥
+.env
+backend/.env
+*.pem
+*.key
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+.venv/
+venv/
+
+# 运行时数据
+backend/data/chatbi.db
+backend/data/uploads/*
+!backend/data/uploads/.gitkeep
+backend/data/file_dbs/*
+!backend/data/file_dbs/.gitkeep
+backend/data/logs/*
+!backend/data/logs/.gitkeep
+
+# Node
+frontend/node_modules/
+frontend/dist/
+*.tsbuildinfo
+
+# IDE / OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+.workbuddy/
+
+# 日志
+*.log

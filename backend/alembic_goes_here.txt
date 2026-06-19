@@ -1,0 +1,2 @@
+Alembic will be introduced when PostgreSQL migration is required.
+MVP uses Base.metadata.create_all() for automatic table creation.
